@@ -20,15 +20,18 @@ function Homepage() {
 
   const apicall = async () => {
     console.log(data);
-    let response = await fetch("http://localhost:3002/api/content", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt: data.prompt,
-      }),
-    });
+    let response = await fetch(
+      "https://gpt-project-3cxt.onrender.com/api/content",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt: data.prompt,
+        }),
+      }
+    );
 
     let data1 = await response.json();
     console.log(data1);
